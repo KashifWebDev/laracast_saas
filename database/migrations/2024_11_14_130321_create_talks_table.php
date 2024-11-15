@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('talks', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('length');
+            $table->string('type');
+            $table->text('abstract');
+            $table->text('organizer_notes');
+            $table->foreignIdFor(\App\Models\User::class);
             $table->timestamps();
         });
     }
