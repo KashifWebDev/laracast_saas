@@ -21,6 +21,7 @@ class TalkFactory extends Factory
         return [
             'id' => User::factory(),
             'title' => fake()->sentence(),
+            'length' => rand(15, 60),
             'type' => $this->faker->randomElement(TalkType::cases())->value,
             'abstract' => fake()->paragraph(),
             'organizer_notes' => fake()->paragraph(),
